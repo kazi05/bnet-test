@@ -26,6 +26,25 @@ class EntriesService: BasicService {
     }
   }
   
+  func addEntry(with body: String, completion: @escaping (Bool) -> Void) {
+    if let session = userDefaults.string(forKey: "session") {
+      let params = [
+        "session": session,
+        "body": body
+      ]
+      request(path: APIPath.AddEntry, with: params) { (json, error) in
+        if error != nil {
+          completion(false)
+        }
+        
+        if let json = json {
+          let status = json["status"].intValue
+          completion(status == 1)
+        }
+      }
+    }
+  }
+  
   @objc private func sessionStarted() {
     callRequest()
   }

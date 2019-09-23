@@ -18,6 +18,8 @@
 		3233616C2338FE0C00FBD998 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3233616B2338FE0C00FBD998 /* NotesListViewController.swift */; };
 		3233616F233902A900FBD998 /* EntriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3233616E233902A900FBD998 /* EntriesService.swift */; };
 		323361722339060100FBD998 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323361712339060100FBD998 /* Entry.swift */; };
+		3233617523390F3F00FBD998 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3233617423390F3F00FBD998 /* AddEntryViewController.swift */; };
+		323361772339110100FBD998 /* Ext+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323361762339110100FBD998 /* Ext+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		3233616B2338FE0C00FBD998 /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		3233616E233902A900FBD998 /* EntriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesService.swift; sourceTree = "<group>"; };
 		323361712339060100FBD998 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		3233617423390F3F00FBD998 /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		323361762339110100FBD998 /* Ext+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIViewController.swift"; sourceTree = "<group>"; };
 		4B65A7A8B4B6DBC0231FD147 /* Pods-iPartnerTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPartnerTest.debug.xcconfig"; path = "Target Support Files/Pods-iPartnerTest/Pods-iPartnerTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5C6C4FB6123D1AE59324021D /* Pods-iPartnerTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPartnerTest.release.xcconfig"; path = "Target Support Files/Pods-iPartnerTest/Pods-iPartnerTest.release.xcconfig"; sourceTree = "<group>"; };
 		E1D395783A52D95376BCCD78 /* Pods_iPartnerTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPartnerTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				323361642338F94000FBD998 /* Reachabelity.swift */,
+				323361762339110100FBD998 /* Ext+UIViewController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -120,18 +125,19 @@
 		323361692338FDED00FBD998 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3233616A2338FDF900FBD998 /* Entries */,
+				3233616A2338FDF900FBD998 /* Entries List */,
+				3233617323390F1C00FBD998 /* Add Entry */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		3233616A2338FDF900FBD998 /* Entries */ = {
+		3233616A2338FDF900FBD998 /* Entries List */ = {
 			isa = PBXGroup;
 			children = (
 				32336170233905EB00FBD998 /* Model */,
 				3233616B2338FE0C00FBD998 /* NotesListViewController.swift */,
 			);
-			path = Entries;
+			path = "Entries List";
 			sourceTree = "<group>";
 		};
 		3233616D2339029900FBD998 /* Entires Service */ = {
@@ -148,6 +154,14 @@
 				323361712339060100FBD998 /* Entry.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3233617323390F1C00FBD998 /* Add Entry */ = {
+			isa = PBXGroup;
+			children = (
+				3233617423390F3F00FBD998 /* AddEntryViewController.swift */,
+			);
+			path = "Add Entry";
 			sourceTree = "<group>";
 		};
 		E9182EF11D2C6D18147BA99B /* Frameworks */ = {
@@ -283,10 +297,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				323361722339060100FBD998 /* Entry.swift in Sources */,
+				3233617523390F3F00FBD998 /* AddEntryViewController.swift in Sources */,
 				3233616F233902A900FBD998 /* EntriesService.swift in Sources */,
 				323361682338FBA100FBD998 /* SessionService.swift in Sources */,
 				323361612338F86400FBD998 /* BasicService.swift in Sources */,
 				3233616C2338FE0C00FBD998 /* NotesListViewController.swift in Sources */,
+				323361772339110100FBD998 /* Ext+UIViewController.swift in Sources */,
 				323361652338F94000FBD998 /* Reachabelity.swift in Sources */,
 				3233614D2338F7AC00FBD998 /* AppDelegate.swift in Sources */,
 			);
