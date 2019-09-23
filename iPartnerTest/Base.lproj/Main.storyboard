@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notes List View Controller-->
+        <!--Entry List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NotesListViewController" customModule="iPartnerTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="EntryListViewController" customModule="iPartnerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,10 +51,51 @@
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="26.53673163418291"/>
         </scene>
+        <!--Entry Detail View Controller-->
+        <scene sceneID="8iM-V1-8fl">
+            <objects>
+                <viewController storyboardIdentifier="EntryDetail" id="UWP-vm-ExD" customClass="EntryDetailViewController" customModule="iPartnerTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EXm-C5-uyD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg2-gS-KN4">
+                                <rect key="frame" x="16" y="40" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGS-uJ-VUb">
+                                <rect key="frame" x="16" y="70.5" width="343" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6mK-Mj-Spt" firstAttribute="trailing" secondItem="lg2-gS-KN4" secondAttribute="trailing" constant="16" id="0N0-Tn-8tr"/>
+                            <constraint firstItem="lg2-gS-KN4" firstAttribute="top" secondItem="6mK-Mj-Spt" secondAttribute="top" constant="20" id="Efd-Xx-UmV"/>
+                            <constraint firstItem="RGS-uJ-VUb" firstAttribute="leading" secondItem="lg2-gS-KN4" secondAttribute="leading" id="IQH-Yv-5v5"/>
+                            <constraint firstItem="RGS-uJ-VUb" firstAttribute="top" secondItem="lg2-gS-KN4" secondAttribute="bottom" constant="10" id="cde-PP-cRM"/>
+                            <constraint firstItem="lg2-gS-KN4" firstAttribute="leading" secondItem="6mK-Mj-Spt" secondAttribute="leading" constant="16" id="v35-fM-9l5"/>
+                            <constraint firstItem="RGS-uJ-VUb" firstAttribute="trailing" secondItem="lg2-gS-KN4" secondAttribute="trailing" id="x38-rs-cJd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6mK-Mj-Spt"/>
+                    </view>
+                    <connections>
+                        <outlet property="bodyLabel" destination="lg2-gS-KN4" id="S2L-2u-H6r"/>
+                        <outlet property="dateLabel" destination="RGS-uJ-VUb" id="gSP-UP-IuK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LoC-Wx-pdD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="993" y="690"/>
+        </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="tXb-fr-lee">
             <objects>
-                <viewController id="oi3-Qo-twf" customClass="AddEntryViewController" customModule="iPartnerTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="oi3-Qo-twf" customClass="AddEntryViewController" customModule="iPartnerTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wTv-Rc-Of2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

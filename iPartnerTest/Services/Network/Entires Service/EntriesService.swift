@@ -10,22 +10,40 @@ import Foundation
 
 class EntriesService: BasicService {
   
+  //MARK: - Single ton
   static let shared = EntriesService()
   private override init() {}
+  
+  //MARK: - Private properties
   private let userDefaults = UserDefaults.standard
   private var completion: (([Entry]?, String?) -> Void)?
   
+  //MARK: - Service methods
+  
+  /**
+   Fetching data from API
+   
+   - returns:
+    Array of Entry model
+  */
   func fetchEntries(completion: @escaping ([Entry]?, String?) -> Void) {
     if userDefaults.string(forKey: "session") == nil {
+      //Для первого запуска приложения
       NotificationCenter.default.addObserver(self, selector: #selector(sessionStarted), name: NSNotification.Name("session_started"), object: nil)
     } else {
-      callRequest()
-      self.completion = { (entries, error) in
-        completion(entries, error)
-      }
+      callFetchingRequest()
+    }
+    self.completion = { (entries, error) in
+      completion(entries, error)
     }
   }
   
+  /**
+   Adding entry to user session
+   
+   - returns:
+    Succes of adding
+  */
   func addEntry(with body: String, completion: @escaping (Bool) -> Void) {
     if let session = userDefaults.string(forKey: "session") {
       let params = [
@@ -45,11 +63,12 @@ class EntriesService: BasicService {
     }
   }
   
+  // NotificationCenter observe method
   @objc private func sessionStarted() {
-    callRequest()
+    callFetchingRequest()
   }
   
-  private func callRequest() {
+  private func callFetchingRequest() {
     guard let session = userDefaults.string(forKey: "session") else { return }
     let params = ["session": session]
     request(path: APIPath.GetEntries, with: params) { (json, error) in

@@ -20,7 +20,16 @@ class BasicService {
     ]
   }
   
-  
+  /**
+   Common method for calling request
+   
+   - parameters:
+      - path: Path of API endpoint
+      - params: Request parameters
+      - completion: Callback responsed at server
+      - json: JSON object from result
+      - error: Error string
+  */
   func request(path: APIPath, with params: Parameters, completion: @escaping (_ json: JSON?, _ error: String?) -> Void) {
     let fullUrlString = String(format: "%@/", APIConstants.host)
     

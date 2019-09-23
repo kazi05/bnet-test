@@ -12,6 +12,8 @@ class AddEntryViewController: UIViewController, UITextViewDelegate {
   
   @IBOutlet weak var textView: UITextView!
   
+  
+  //MARK: - Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -20,6 +22,7 @@ class AddEntryViewController: UIViewController, UITextViewDelegate {
     textView.delegate = self
   }
   
+  //MARK: - UITextViewDelegate
   func textViewDidBeginEditing(_ textView: UITextView) {
     if textView.textColor == UIColor.lightGray {
       textView.text = ""
@@ -34,6 +37,7 @@ class AddEntryViewController: UIViewController, UITextViewDelegate {
     }
   }
   
+  //MARK: - IBActions
   @IBAction func actionDissmis(_ sender: Any) {
     dismiss(animated: true, completion: nil)
   }

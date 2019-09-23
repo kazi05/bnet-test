@@ -10,10 +10,15 @@ import Foundation
 
 class SessionService: BasicService {
   
+  //MARK: - Singleton
   static let shared = SessionService()
   private override init() { }
+  
   private let userDefaults = UserDefaults.standard
   
+  /**
+   Start session
+  */
   public func startSession() {
     if userDefaults.string(forKey: "session") == nil {
       request(path: APIPath.NewSession, with: [:]) { (json, error) in

@@ -20,7 +20,7 @@ class EntryTableViewCell: UITableViewCell, NibLoadable {
     backGroundView.layer.cornerRadius = 10
     backGroundView.layer.masksToBounds = false
     backGroundView.layer.shadowOpacity = 0.23
-    backGroundView.layer.shadowRadius = 4
+    backGroundView.layer.shadowRadius = 5
     backGroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
     backGroundView.layer.shadowColor = UIColor.black.cgColor
   }
@@ -31,7 +31,7 @@ class EntryTableViewCell: UITableViewCell, NibLoadable {
   }
   
   func set(entry: Entry) {
-    bodyTextLabel.text = entry.body
+    bodyTextLabel.text = "\(entry.body.prefix(200))"
     let da = Int(entry.da) ?? 0
     let dm = Int(entry.dm) ?? 0
     
