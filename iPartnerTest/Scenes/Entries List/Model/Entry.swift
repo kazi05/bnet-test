@@ -11,6 +11,6 @@ import Foundation
 struct Entry: Codable {
   let id: String
   let body: String
-  let da: Int64
-  let dm: Int64
+  let da: String
+  let dm: String
 }

@@ -59,7 +59,7 @@ class EntriesService: BasicService {
       
       if let json = json {
         var entries = [Entry]()
-        guard let results = json["data"].array else {
+        guard let results = json["data"].array?.first?.array else {
           self.completion?(nil, nil)
           return
         }
